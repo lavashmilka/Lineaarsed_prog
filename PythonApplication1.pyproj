@@ -26,6 +26,7 @@
   <ItemGroup>
     <Compile Include="Funktsioonide_print___input____float____int___kasutamine.py" />
     <Compile Include="Kehamassiindeksi %28KMI%29 kalkulaator.py" />
+    <Compile Include="Kordused.py" />
     <Compile Include="PythonApplication1.py" />
   </ItemGroup>
   <ItemGroup>
