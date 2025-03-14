@@ -132,68 +132,68 @@
 #      print(f"{i}")
 
 #Ulesanne 5
-N=int(input("N: "))
-for j in range(N):
-    for i in range(N):
-        if i==j or i+j==N-1:
-            print("X",end=" ")
-        else:
-            print("O",end=" ")
-    print()
-print()
-#Ulesanne 6
-for i in range(5):
-    print("*"*5)
+# N=int(input("N: "))
+# for j in range(N):
+#     for i in range(N):
+#         if i==j or i+j==N-1:
+#             print("X",end=" ")
+#         else:
+#             print("O",end=" ")
+#     print()
+# print()
+# #Ulesanne 6
+# for i in range(5):
+#     print("*"*5)
 
-for i in range(1,5):
-    print("*"*i)
+# for i in range(1,5):
+#     print("*"*i)
     
-for i in range(5,0,-1):
-    print("*"*i)
+# for i in range(5,0,-1):
+#     print("*"*i)
 
 
-#Ulesanne 7
-from random import *
-N=1
-for i in range(5):
-    N*=10
-    print(N)
-    N+=randint(0,9)
-    print(N)
+# #Ulesanne 7
+# from random import *
+# N=1
+# for i in range(5):
+#     N*=10
+#     print(N)
+#     N+=randint(0,9)
+#     print(N)
 
-#Ulesanne 8
-paaris=0
-paaritu=0
-for number in range(1,101):
-    if number %2==0:
-        print(f"{number}on paaris")
-        paaris+=1
-    else:
-        print(f"{number}on paaritu")
-        paaritu+=1
-print(f"\nPaaris arve kokku:{paaris}")
-print(f"\nPaaritu arve kokku:{paaritu}")
+# #Ulesanne 8
+# paaris=0
+# paaritu=0
+# for number in range(1,101):
+#     if number %2==0:
+#         print(f"{number}on paaris")
+#         paaris+=1
+#     else:
+#         print(f"{number}on paaritu")
+#         paaritu+=1
+# print(f"\nPaaris arve kokku:{paaris}")
+# print(f"\nPaaritu arve kokku:{paaritu}")
 
-#Ulesanne 9
-for i in range(1,11):
-    print(f"{i}*5={i*5}")
+# #Ulesanne 9
+# for i in range(1,11):
+#     print(f"{i}*5={i*5}")
 
-#Ulesanne 10
-for i in range(1,101):
-    if number %5==0:
-        print(number)
-#Ulesanne 11
-from random import *
-arv = random.randint(1, 100)
-for i in range(3):
-    kasutaja_arvamus = int(input("Arva arv ära (1-100): "))
-    if kasutaja_arvamus == arv:
-        print("Õnnitleme, arvasid õige arvu ära!")
-        break
-    else:
-        if i < 2:  
-            print("Vale arv. Proovi veel.")
-        else: 
-            print(f"Õnnetuseks ei saanud sa õiget arvu kätte. Õige arv oli {arv}.")
+# #Ulesanne 10
+# for i in range(1,101):
+#     if number %5==0:
+#         print(number)
+# #Ulesanne 11
+# from random import *
+# arv = random.randint(1, 100)
+# for i in range(3):
+#     kasutaja_arvamus = int(input("Arva arv ära (1-100): "))
+#     if kasutaja_arvamus == arv:
+#         print("Õnnitleme, arvasid õige arvu ära!")
+#         break
+#     else:
+#         if i < 2:  
+#             print("Vale arv. Proovi veel.")
+#         else: 
+#             print(f"Õnnetuseks ei saanud sa õiget arvu kätte. Õige arv oli {arv}.")
 
-#Ulesanne 12
+# #Ulesanne 12

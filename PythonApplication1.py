@@ -129,24 +129,3 @@
 #     print("До свидания!")
 
 
-# for j in range(20):
-#     for i in range(10):
-#         if i==j or  
-#             print("x",end=" ")
-#         else:
-#             print("o",end=" ")
-#     print()
-import random
-arv = random.randint(1, 100)
-for i in range(3):
-    kasutaja_arvamus = int(input("Arva arv ära (1-100): "))
-    if kasutaja_arvamus == arv:
-        print("Õnnitleme, arvasid õige arvu ära!")
-        break
-    else:
-        if i < 2:  
-            print("Vale arv. Proovi veel.")
-        else: 
-            print(f"Õnnetuseks ei saanud sa õiget arvu kätte. Õige arv oli {arv}.")
-
-

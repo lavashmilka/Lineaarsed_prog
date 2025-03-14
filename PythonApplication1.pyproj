@@ -28,6 +28,7 @@
     <Compile Include="Kehamassiindeksi %28KMI%29 kalkulaator.py" />
     <Compile Include="Kordused.py" />
     <Compile Include="PythonApplication1.py" />
+    <Compile Include="Vigade_otsing.py" />
   </ItemGroup>
   <ItemGroup>
     <InterpreterReference Include="Global|PythonCore|3.9" />
