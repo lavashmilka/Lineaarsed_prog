@@ -2,7 +2,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>5e132cae-3674-4823-8454-2a0cf07fb0da</ProjectGuid>
+    <ProjectGuid>be5ac703-139d-4195-b0af-ae029347a144</ProjectGuid>
     <ProjectHome>.</ProjectHome>
     <StartupFile>PythonApplication1.py</StartupFile>
     <SearchPath>
@@ -11,9 +11,6 @@
     <OutputPath>.</OutputPath>
     <Name>PythonApplication1</Name>
     <RootNamespace>PythonApplication1</RootNamespace>
-    <IsWindowsApplication>False</IsWindowsApplication>
-    <InterpreterId>Global|PythonCore|3.9</InterpreterId>
-    <PublishUrl>v</PublishUrl>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -24,16 +21,7 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Funktsioonide_print___input____float____int___kasutamine.py" />
-    <Compile Include="Järjendid.py" />
-    <Compile Include="Kehamassiindeksi %28KMI%29 kalkulaator.py" />
-    <Compile Include="Kordused.py" />
     <Compile Include="PythonApplication1.py" />
-    <Compile Include="Vigade_otsing.py" />
-    <Compile Include="Wordle.py" />
-  </ItemGroup>
-  <ItemGroup>
-    <InterpreterReference Include="Global|PythonCore|3.9" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
