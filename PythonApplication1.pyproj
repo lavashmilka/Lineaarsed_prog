@@ -24,14 +24,15 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="FunktsioonidDef.py" />
+    <Compile Include="Fun_module.py" />
+    <Compile Include="Teema5FunktsioonidDef.py" />
     <Compile Include="Funktsioonide_print___input____float____int___kasutamine.py" />
     <Compile Include="Järjendid.py" />
     <Compile Include="Kehamassiindeksi %28KMI%29 kalkulaator.py" />
     <Compile Include="Kordused.py" />
     <Compile Include="PythonApplication1.py" />
     <Compile Include="Vigade_otsing.py" />
-    <Compile Include="Wordle.py" />
+    <Compile Include="Teema4Wordle.py" />
   </ItemGroup>
   <ItemGroup>
     <InterpreterReference Include="Global|PythonCore|3.9" />
