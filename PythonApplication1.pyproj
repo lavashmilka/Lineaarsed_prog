@@ -24,6 +24,7 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="FunktsioonidDef.py" />
     <Compile Include="Funktsioonide_print___input____float____int___kasutamine.py" />
     <Compile Include="Järjendid.py" />
     <Compile Include="Kehamassiindeksi %28KMI%29 kalkulaator.py" />

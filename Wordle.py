@@ -1,6 +1,7 @@
 ﻿from random import *
 sõnad=["Võilill","Nartsiss","Rukkilill","Lill","Liilia"]
 salasõna=choice(sõnad)
+salasõnalist=list(salasõna)
 k=len(salasõna)
 katsed=6
 while katsed>0:
@@ -8,26 +9,19 @@ while katsed>0:
     print(f"On jäänud {katsed} katset")
     katsed-=1
     sõna=input("Sisesta oma variant: ").capitalize()
-    if len(sõna)!=k:
-        print(f"Sõna peab olema {k} tähte pikk!")
-        continue
+    sõnalist=list(sõna)
+    for a in range (0,k,1):
+        o+=1
+        if sõnalist[0]==salasõnalist[0]:
+            print(sõnalist[0],end=" ")
+        else:
+            print("*",end=" ")
+    print()
     if sõna==salasõna:
-     print("Hurraa!!")
-     break
-     tulemus=""
-     i=0
-     while i<k:
-         täht=sõna[i]
-         if täht==salasõna[i]:
-             tulemus+=f"[{täht}]"
-         elif täht in salasõna:
-             tulemus+=f"({täht})"
-         else:
-             tulemus+=f" {täht} "
-             i+=1
-             print(tulemus)
-             katsed-=1
-             if katsed==0:
-                 print(f"Kahjuks kaotasid! Õige sõna oli: {salasõna}")
-
-
+        print("Huraa!")
+        break
+    else:
+        print("Vale sõna!" ,6-p-1, "on jäänud katset.")
+        p-=1
+        sõnalist=sõnalist.append(sõna)
+        print(sõnalist)
