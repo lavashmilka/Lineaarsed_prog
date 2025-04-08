@@ -169,3 +169,26 @@
 #              katsed-=1
 #              if katsed==0:
 #                  print(f"Kahjuks kaotasid! Õige sõna oli: {salasõna}")
+
+# p=[100,12,13]
+# i=['Anna','Milana','Vladik']
+# # a=sum(p)/len(p)
+# # print(f"Keskmine palk: {a:.2f}")
+# # print("Keskmine palgaga inimesed: ")
+# # for m in range(len(p)):
+# #         if p[m]==a:
+# #             print(i[m],"-",p[m])
+# #         else:
+# #             print("Viga")
+
+# if len(p) > 0:
+#     avg=sum(p)/len(p)
+#     print(f"Keskmine palk: {avg:.0f}")
+#     for j in range(len(p)):
+#         if p[j] ==avg:
+#             print(f"{i[j]} saab keskmist palka.")
+# else:
+#     print("Palkade nimekiri on tühi.")
+
+
+       

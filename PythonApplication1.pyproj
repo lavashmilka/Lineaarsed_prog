@@ -26,6 +26,8 @@
   <ItemGroup>
     <Compile Include="Fun_module.py" />
     <Compile Include="Lihtsad_programmid.py" />
+    <Compile Include="modulepalgad.py" />
+    <Compile Include="palgad.py" />
     <Compile Include="Teema5FunktsioonidDef.py" />
     <Compile Include="Funktsioonide_print___input____float____int___kasutamine.py" />
     <Compile Include="Järjendid.py" />
