@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>5e132cae-3674-4823-8454-2a0cf07fb0da</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>PythonApplication1.py</StartupFile>
+    <StartupFile>töötajad7.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -27,6 +27,7 @@
     <Compile Include="Fun_module.py" />
     <Compile Include="Lihtsad_programmid.py" />
     <Compile Include="modulepalgad.py" />
+    <Compile Include="moduletöötajad.py" />
     <Compile Include="palgad.py" />
     <Compile Include="Teema5FunktsioonidDef.py" />
     <Compile Include="Funktsioonide_print___input____float____int___kasutamine.py" />
@@ -36,6 +37,7 @@
     <Compile Include="PythonApplication1.py" />
     <Compile Include="Tingimuslik_operaator_IF.py" />
     <Compile Include="Tund1.py" />
+    <Compile Include="töötajad7.py" />
     <Compile Include="Vigade_otsing.py" />
     <Compile Include="Teema4Wordle.py" />
   </ItemGroup>

@@ -129,8 +129,10 @@ def palgaotsing(p:list,i:list):
         if i[j]==nimi:
             print(f"{nimi} palk: {p[j]}")
             leitud=True
-        else:
-            print(f"{nimi} kohta andmeid ei leitud.")
+    if leitud==False:
+        print(f"{nimi} kohta andmeid ei leitud.")
+
+
 
              
 def nimekirjad(p:list,i:list):
@@ -138,21 +140,19 @@ def nimekirjad(p:list,i:list):
     :param p: Inimeste nimekiri
     :param i: Palkade nimekiri
     :rtype:float
-    """  
-    while True:
-            summa = float(input("Sisesta summa: "))
-            break
+    """          
     try:
-         valik = input("Kas soovid rohkem või vähem? (r/v): ").lower()
-         if valik == "r":
-                for j in range(len(p)):
-                    if p[j] > summa:
-                        print(i[j], "-", p[j])
-                    elif valik == "v":
-                        for j in range(len(p)):
-                            if p[j] < summa:
-                                print(i[j], "-", p[j])
-         else:
+        summa = float(input("Sisesta summa: "))
+        valik = input("Kas soovid rohkem või vähem? (r/v): ").lower()
+        if valik == "r":
+                for h in range(len(p)):
+                    if p[h] > summa:
+                        print(i[h], "-", p[h])
+        elif valik == "v":
+            for h in range(len(p)):
+                if p[h] < summa:
+                    print(i[h], "-", p[h])
+        else:
               print("Vale valik!")
     except:
           print("Vigane sisend!")
@@ -164,20 +164,16 @@ def top(p:list,i:list):
     :param i: Palkade nimekiri
     :rtype:none
     """
-    suurim_palk = max(p)
+    suurimad_palgad = max(p)
     print(f"Suurim palk: {suurim_palk} ")
     for j in range(len(p)):
         if p[j]==suurim_palk:
             print(f"{i[j]}")
-            väiksem_palk = min(p)
-            print(f"Väiksem palk: {väiksem_palk} ")
-            for j in range(len(p)):
-                if p[j]==väiksem_palk:
-                    print(f"{i[j]}")
-                else:
-                    print("Viga")
-        else:
-            ("Viga")
+    väiksem_palk = min(p)
+    print(f"Väiksem palk: {väiksem_palk} ")
+    for j in range(len(p)):
+        if p[j]==väiksem_palk:
+            print(f"{i[j]}")
    
 def keskmine(p:list,i:list):
     """Keskmine palk ja selle saaja nimi/nimed
@@ -195,7 +191,27 @@ def keskmine(p:list,i:list):
             print("Viga")
        
 
-
+def bonus_salary(p: list, i:list):
+    """Oma funktsioon annab palgatud töötajale täiendava palgaõusu, võimaldades valida palgaõusu protsendi
+    :param i: Inimeste nimekiri
+    :param p: Palkade nimekiri
+    :rtype: None
+    """
+    for idx, (name,salary) in enumerate(zip(i,p),1):
+        print("\nCurrent employees and salaries: ")
+        print(f"{idx}. {name}: {salary}$")
+    try:
+        choice=int(input("Valige töötaja: ")) -1
+        bonus=float(input("Kirjutage mittu protsentis palk tõuseb: "))
+        if 0 <= choice < len(i) and bonus > 0:
+            original_salary=p[choice]
+            bonus_to = bonus / 100
+            bonus_salary = original_salary * bonus_to + original_salary
+            print(f"New salary is: {bonus_salary}$")
+        else:
+            print("Valige eksisteeriv töötaja ja valige bonus rohkem kui 0")
+    except:
+        print("Error!")
 
 
 
