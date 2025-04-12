@@ -75,13 +75,5 @@ def kuva_töötajad(nimed, aastad):
         print(f"{nimed[i]} - {aastad[i]}")
 
 
-def tootajad():
-    """Põhifunktsioon, mis pakub kasutajale valiku menüü töötajate andmete analüüsimiseks.
-    """
-    nimed, aastad = sisesta_andmed()
-    if not nimed:
-        print("Andmed puuduvad.")
-        return
-
 
 

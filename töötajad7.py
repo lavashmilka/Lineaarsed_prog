@@ -19,9 +19,6 @@ def tootajad():
                 otsi_aasta_järgi(nimed, aastad)
         elif valik == 5:
                 kuva_töötajad(nimed, aastad)
-        elif valik == 6:
-            print("Head aega!")
-            break
         else:
             print("Tundmatu valik. Proovi uuesti.")
 	
