@@ -42,7 +42,7 @@ def keskmine_vanus(nimed,aastad):
         vanused.append(vanus)
     # Вычисляем средний возраст
     keskmine = sum(vanused) / len(vanused)
-    print(f"Keskmine vanus: {keskmine:.0f}")
+    print(f"Keskmine vanus: {round(keskmine)}")
 
 def top_töötajad(nimed, aastad):
     """Находит 10 самых молодых и 10 самых старых работников.
