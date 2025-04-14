@@ -5,7 +5,7 @@ if not nimed:
 else:
     while True:
         print("\nVali tegevus:")
-        print("1-Kuva pensionärid\n2-Arvuta keskmine vanus\n3-10 noorimat ja vanimat töötajat\n4-Otsi töötajaid sünniaasta järgi\n5-Kuvada kõik töötajad\n6-Välju\n7-Bla")  
+        print("1-Kuva pensionärid\n2-Arvuta keskmine vanus\n3-10 noorimat ja vanimat töötajat\n4-Otsi töötajaid sünniaasta järgi\n5-Kuvada kõik töötajad\n6-Välju")  
         try:
             valik = int(input("Valik: "))        
             if valik == 1:
@@ -20,9 +20,7 @@ else:
                     kuva_töötajad(nimed, aastad)
             elif valik == 6:
                     print("Väljumine...")
-            elif valik==7:
-                bla(nimed,aastad)
-                break
+                    break
             else:
                 print("Tundmatu valik. Proovi uuesti.")   
         except:

@@ -1,6 +1,7 @@
-﻿from datetime import *
-def sisesta_andmed():
+﻿def sisesta_andmed():
     """Kogub töötajate nimed ja sünniaastad, kuni kasutaja lõpetab sisestamise.
+    :param list nimed: Список имён работников
+    :param list aastad: Список их даты рождения
     """
     töötajad=[]
     sünniaastad=[]
@@ -18,9 +19,11 @@ def sisesta_andmed():
 
 def leia_pensionärid(nimed,aastad):
     """Kuvab kõik töötajad, kelle vanus on 65 või rohkem aastat.
+    :param list nimed: Список имён работников
+    :param list aastad: Список их даты рождения
     """
     print("\nPensionärid (vanus +65): ")
-    aasta_now=datetime.now().year
+    aasta_now=2025
     for i in range(len(aastad)):
         vanus=aasta_now-aastad[i]
         if vanus>=65:
@@ -28,49 +31,50 @@ def leia_pensionärid(nimed,aastad):
 
 def keskmine_vanus(nimed,aastad):
     """Arvutab ja kuvab töötajate keskmise vanuse.
+    :param list nimed: Список имён работников
+    :param list aastad: Список их даты рождения
     """
-    aasta_now=datetime.now().year
-    vanused=[]
-    summa=0
+    aasta_now = 2025
+    vanused = []
+    # Считаем возраст каждого и сохраняем в список
     for a in aastad:
         vanus = aasta_now - a
-        summa+=vanus
         vanused.append(vanus)
+    # Вычисляем средний возраст
     keskmine = sum(vanused) / len(vanused)
     print(f"Keskmine vanus: {keskmine:.0f}")
 
-def top_töötajad(nimed,aastad):    
-    """Kuvab 10 noorimat ja 10 vanimat töötajat.
+def top_töötajad(nimed, aastad):
+    """Находит 10 самых молодых и 10 самых старых работников.
+    :param list nimed: Список имён работников
+    :param list aastad: Список их даты рождения
     """
-    aasta_now=datetime.now().year
-    vanused =[]
-    # Считаем возраст каждого и сохраняем в список
+    aasta_now = 2025
+    vanused = []
+    # Считаем возраст каждого и сохраняем в список — сначала возраст, потом имя
     for i in range(len(nimed)):
         vanus = aasta_now - aastad[i]
-        vanused.append((nimed[i], vanus)) # кортеж: (имя, возраст)
-
-#  сортировка по возрасту
-    for i in range(len(vanused)):
-        for j in range(i + 1, len(vanused)):
-            if vanused[i][1] > vanused[j][1]: # если текущий старше, меняем местами
-                vanused[i], vanused[j] = vanused[j], vanused[i]
-
-# Вывод 10 самых молодых
+        vanused.append((vanus, nimed[i])) # (возраст, имя)
+    # Сортировка теперь по возрасту, потому что возраст стоит первым
+    vanused.sort()
+    # Вывод 10 самых молодых работников
     print("10 самых молодых работников:")
     for i in range(min(10, len(vanused))):
-                        nimi, vanus = vanused[i]
-                        print(f"{nimi} - {vanus} лет")
-
-# Вывод 10 самых старых
+        vanus, nimi = vanused[i]
+        print(f"{nimi} - {vanus} лет")
+    # Инвертируем список, чтобы выводить самых старых работников
+    vanused.reverse()
+    # Вывод 10 самых старых работников
     print("\n10 самых старых работников:")
     for i in range(min(10, len(vanused))):
-                            nimi, vanus = vanused[-(i+1)]
-                            print(f"{nimi} - {vanus} лет")
-
+        vanus, nimi = vanused[i] # просто берем i-й элемент, потому что список инвертирован
+        print(f"{nimi} - {vanus} лет")
 
 
 def otsi_aasta_järgi(nimed, aastad):
     """Otsib töötajaid, kes on sündinud määratud aastal.
+    :param list nimed: Список имён работников
+    :param list aastad: Список их даты рождения
     """
     try:
         aasta = int(input("Sisesta sünniaasta, keda otsida: "))
@@ -88,6 +92,8 @@ def otsi_aasta_järgi(nimed, aastad):
 
 def kuva_töötajad(nimed, aastad):
     """Kuvab kõik töötajad koos nende sünniaastatega.
+    :param list nimed: Список имён работников
+    :param list aastad: Список их даты рождения
     """
     print("\nKõik töötajad ja nende sünniaastad:")
     for i in range(len(nimed)):
