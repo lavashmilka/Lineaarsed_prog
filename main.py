@@ -1,6 +1,7 @@
-﻿from sõnastik import *
+from sõnastik import *
 valjasta_tervitus()
-
+file='sõnastik.txt'
+sonad=sõnastik.loe_failist(file)
 while True:
     kuva_menu()
     valik = input("\nSisesta valik: ")
@@ -17,8 +18,10 @@ while True:
         kuva_sonad(sonad)    
     elif valik == "5":
         testi_teadmisi(sonad) 
-    elif valik == "6":
-        text_to_speech() 
+    # elif valik == "6":
+    #     text_to_speech() 
+    elif valik== "7":
+        loe_failist(file)
     elif valik == "0":
         break
     else:

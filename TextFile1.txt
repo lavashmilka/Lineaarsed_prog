@@ -1,0 +1,11 @@
+﻿esimene
+teine
+kolmas
+neljas
+viies
+kuues
+seitsmes
+
+kaheksas
+üheksas
+kümnes

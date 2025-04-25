@@ -1,13 +1,15 @@
-﻿import random
-import pyttsx3  #Импортируем библиотеку для синтеза речи
+import random
+# import pyttsx3  #Импортируем библиотеку для синтеза речи
 
-sonad = [ # Список словарей, где каждое слово представлено на трёх языках: эстонский, русский, английский
-    {'est': 'koer', 'rus': 'собака', 'eng': 'dog'},
-    {'est': 'kass', 'rus': 'кошка', 'eng': 'cat'},
-    {'est': 'maja', 'rus': 'дом', 'eng': 'house'},
-    {'est': 'auto', 'rus': 'машина', 'eng': 'car'},
-    {'est': 'päike', 'rus': 'солнце', 'eng': 'sun'}
-]
+
+
+def loe_failist(fsonad):
+    f=open("TextFile.txt",'w', encoding="utf-8-sig")
+    for s in sonad:
+        rida=f"{s['est']}-{s['rus']}-{s['eng']}]"
+    f.write(rida)
+    f.close()
+    print("Sõnad on salvestatud faili 'sona")
 
 def valjasta_tervitus():  
     print("Tere tulemast keelesõnastikku!")
@@ -17,7 +19,7 @@ def kuva_menu():
     """Меню выбора
     """
     print("Menu:")
-    print("1-Tõlgi sõna\n2-Lisa uus sõna\n3-Paranda sõna\n4-Kuva kõik sõnad\n5-Testi teadmisi\n6-Tekst kõneks\n7-otsi sona\n0-Välja")
+    print("1-Tõlgi sõna\n2-Lisa uus sõna\n3-Paranda sõna\n4-Kuva kõik sõnad\n5-Testi teadmisi\n6-Tekst kõneks\n7-fail\n0-Välja")
 
 
 def tolkija(sonad, allikas, siht, sona):
@@ -70,7 +72,7 @@ def kysi_kasutajalt_sisestus(tekst):
     """Запрашиваем ввод от пользователя и проверяем, что он не пустой
     """
     while True:
-        sisend=input(tekst).lower()  
+        sisend=input().lower()  
         if sisend=="":  #Если строка пустая
             print("Tühja ei tohi jätta!")  #то пишем что нельзя оставить пустой
         else:
@@ -105,7 +107,7 @@ def testi_teadmisi(sonad):
 def kuva_tulemus(õige, kogus):
     """Вывод результата после проверки знаний
     """
-    print(f"Sinu tulemus: {õige}/{kogus}") #Выводим, сколько правильных из всех
+    print(f"Sinu tulemus: {õige}/{kogus}") 
 
 def kuva_sonad(sonad):
     """Показывает все слова в словаре
@@ -114,11 +116,11 @@ def kuva_sonad(sonad):
         print(m)
 
 
-def text_to_speech():
-    mootor = pyttsx3.init() #Инициализация "голоса"
-    sona = input("Sisesta sõna: ").lower() #Запрашиваем слово
-    mootor.say(sona) #Озвучиваем его
-    mootor.runAndWait() #Запускаем произношение
+# def text_to_speech():
+#     mootor = pyttsx3.init() #Инициализация "голоса"
+#     sona = input("Sisesta sõna: ").lower() #Запрашиваем слово
+#     mootor.say(sona) #Озвучиваем его
+#     mootor.runAndWait() #Запускаем произношение
 
 
 

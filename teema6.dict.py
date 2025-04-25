@@ -42,7 +42,7 @@ while True:
         break
     else:
         print("Vale vastus")
-
+      
 
 
 
