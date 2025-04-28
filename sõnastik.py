@@ -1,15 +1,21 @@
 import random
 # import pyttsx3  #Импортируем библиотеку для синтеза речи
+sonad = [
+    {'est': 'koer', 'rus': 'собака', 'eng': 'dog'},
+    {'est': 'kass', 'rus': 'кошка', 'eng': 'cat'},
+    {'est': 'maja', 'rus': 'дом', 'eng': 'house'},
+    {'est': 'auto', 'rus': 'машина', 'eng': 'car'},
+    {'est': 'päike', 'rus': 'солнце', 'eng': 'sun'}
+]
 
 
-
-def loe_failist(fsonad):
-    f=open("TextFile.txt",'w', encoding="utf-8-sig")
-    for s in sonad:
-        rida=f"{s['est']}-{s['rus']}-{s['eng']}]"
-    f.write(rida)
-    f.close()
-    print("Sõnad on salvestatud faili 'sona")
+# def loe_failist(fsonad):
+#     f=open("TextFile.txt",'w', encoding="utf-8-sig")
+#     for s in sonad:
+#         rida=f"{s['est']}-{s['rus']}-{s['eng']}]"
+#     f.write(rida)
+#     f.close()
+#     print("Sõnad on salvestatud faili 'sona")
 
 def valjasta_tervitus():  
     print("Tere tulemast keelesõnastikku!")
@@ -22,7 +28,7 @@ def kuva_menu():
     print("1-Tõlgi sõna\n2-Lisa uus sõna\n3-Paranda sõna\n4-Kuva kõik sõnad\n5-Testi teadmisi\n6-Tekst kõneks\n7-fail\n0-Välja")
 
 
-def tolkija(sonad, allikas, siht, sona):
+def tõlkija(sonad, allikas, siht, sona):
     """Функция перевода слова с одного языка на другой
     """
     for kirje in sonad: #Перебираем каждую запись в словаре
@@ -40,6 +46,7 @@ def lisa_sona(sonad):
     uus_eng = input("Sisesta sõna inglise keeles: ").strip().lower()
     sonad.append({'est': uus_est, 'rus': uus_rus, 'eng': uus_eng}) #Добавляем словарь в список
     print("Uus sõna on lisatud!")
+
 
 def loo_sonastik():
     return sonad
@@ -67,6 +74,7 @@ def paranda_sona(sonad):
         print("Parandatud!") 
     else:
         print("Sõna ei leitud!")  #Если слово не найдено
+
 
 def kysi_kasutajalt_sisestus(tekst):
     """Запрашиваем ввод от пользователя и проверяем, что он не пустой
