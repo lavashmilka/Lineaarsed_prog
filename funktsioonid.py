@@ -1,110 +1,93 @@
-def kontaktid_failist(fail):
-    """Чтение контактов из файла
+import smtplib,ssl
+from email.message import EmailMessage
+
+def kontaktid_failist(fail:str):
+    kontaktid=[]
+    with open(fail,'r',encoding="utf-8-sig") as f:
+        for rida in f:
+            nimi,email,telefon=rida.strip().split("/")
+            kontaktid.append({'nimi':nimi,'email':email,'telefon':telefon})
+    return kontaktid
+
+def salvesta_kontaktid(fail:str,järjend:list):
+    with open(fail,'w',encoding="utf-8-sig") as f:
+        for k in järjend:
+            f.write(f"{k['nimi']},{k['email']},{k['telefon']}\n")
+
+def lisa_kontakt(kontaktid):
+    """Добавление нового контакта в телефонную книгу
     """
-    kontaktid = []
-    try:
-        with open(fail, 'r', encoding="utf-8-sig") as f:
-            for rida in f:
-                nimi, telefon, email = rida.strip().split(",")
-                kontaktid.append({'nimi': nimi, 'telefon': telefon, 'email': email})
-    except FileNotFoundError:
-        pass # Если файла нет, возвращаем пустой список
-        return kontaktid
+    print("Lisame uue kontakti!") 
+    uus_nimi = input("Sisesta nimi: ").strip().lower()
+    uus_email = input("Sisesta email: ").strip().lower()
+    uus_telefon = input("Sisesta telefon: ").strip()
+    kontaktid.append({'nimi': uus_nimi, 'email': uus_email, 'telefon': uus_telefon}) 
+    print("Uus kontakt on lisatud!")
 
-def salvesta_kontaktid(fail, kontaktid):
-    """Сохранение контактов в файл
+def kuva_kontaktid(kontaktid):
+    """Показывает все данные в телефонной книге
     """
-    with open(fail, 'w', encoding="utf-8-sig") as f:
-        for k in kontaktid:
-            f.write(f"{k['nimi']},{k['telefon']},{k['email']}\n")
+    for k in kontaktid:
+            print(k)
 
-def lisa_kontakt(sonad):
-    """Добавление нового слова в словарь
+def otsi_kontakt(kontaktid):
+    """Ищет данные в телефонной книге
     """
-    print("Lisame uue kontakti telegoniraamatusse!") #Запрашиваем слово на всех трёх языках, маленькими буквами и убираем лишние пробелы
-    uus_nimi = input("Sisesta sõna eesti keeles: ").strip().lower()
-    uus_telefon = input("Sisesta sõna vene keeles: ").strip().lower()
-    uus_email = input("Sisesta sõna inglise keeles: ").strip().lower()
-    sonad.append({'nimi': uus_nimi, 'telefon': uus_telefon, 'email': uus_email}) #Добавляем словарь в список
-    print("Uus sõna on lisatud!")
+    nimi=input("Sisesta nimi: ").strip().lower()
+    for kontakt in kontaktid:  
+        if nimi in kontakt['nimi'].lower():  
+            print(f"Leitud: {kontakt}") 
+            return kontakt  
+    return None   
 
-def kuva_kontaktid(sonad):
-    """Показывает все слова в словаре
+def kustuta_kontakt(kontaktid):
+    """Удаление контакта 
     """
-    for m in sonad: 
-        print(m)
+    kontakt=otsi_kontakt(kontaktid)
+    if kontakt in kontaktid:
+        kontaktid.remove(kontakt)  
+        print("Kontakt kustutatud!")
 
-def otsi_kontakt(kontaktid, nimi):
-    """Ищет слово во всех значениях словаря и возвращает его запись
-    """
-    for m in kontaktid:  #Перебираем все записи в словаре
-        if nimi in m.values():  #Если слово найдено в любом из языков
-            print(f"Leitud kontakt: {m}")  #Показываем найденное слово и все переводы
-            return m  #Возвращаем слово
-    return None  #Если слово не найдено
-
-def kustuta_andmed(kontaktid, nimi, email, telefon):
-    try:
-        kustutav=input("Sisesta kustutav nimi: ")
-        kirje=otsi_kontakt(kustutav) 
-        if k>0:
-            for j in range(k):
-                ind=j.index(nimi)
-                nimi.pop(ind)
-                email.pop(ind)
-                telefon.pop(ind)
-                print("Andmed on lisatud")
-        else:
-                print("Andmed puuduvad!")
-    except:
-            print("Kirjuta ainult tähtede kasutades")
-
-
-def paranda_sona(kontaktid):
+def paranda_kontakt(kontaktid):
     """Изменение контакта
     """
-    parandatav = input("Sisesta muudetava kontakti nimi: ").strip().lower() # Запрашиваем имя контакта
-    kirje = None
+    andmed=otsi_kontakt(kontaktid)  
+    if andmed:  
+        andmed['nimi']=input("Uus nimi: ")  
+        andmed['telefon']=input("Uus telefon: ")  
+        andmed['email']=input("Uus email: ")  
+        print("Parandatud!") 
+    else:
+        print("Sõna ei leitud!")  
+
+def sorteeri_kontakt(kontaktid):
+    """Сортировка контактов по имени, телефону или email
+    """
+    by = input("Sorteeri mille järgi (nimi, telefon, email): ").strip().lower()
+    if by not in ["nimi", "telefon", "email"]:
+        print("Vale valik.")
+        return
+    ajutine = []
     for kontakt in kontaktid:
-        if kontakt["nimi"].lower() == parandatav:
-            kirje = kontakt
-            break
-            if kirje: # Если контакт найден
-                kirje['nimi'] = input("Uus nimi: ").strip().lower()
-                kirje['telefon'] = input("Uus telefon: ").strip()
-                kirje['email'] = input("Uus e-mail: ").strip().lower()
-                print("Kontakt on muudetud!")
-            else:
-                print("Kontakti ei leitud!") # Если контакт не найден
+        ajutine.append([kontakt[by].lower(), kontakt])
+    ajutine.sort()
+    for i in range(len(kontaktid)):
+        kontaktid[i] = ajutine[i][1]
+    print("Sorteeritud.")
 
 
-import smtplib, ssl
-from email.message import EmailMessage
 def saada_kiri():
     kellele=input("Kellele: ")
-    kiri="""<!DOCTYPE html>
-<head>
-</head>
-<body>
-<h1>Sending an HTML email from Python</h1>
-<p>Hello there,</p>
-<a href="https://inspirezone.tech/">Here's a link to an awesome dev
-community!</a>
-</body>
-</html>"""
     smtp_server="smtp.gmail.com"
     smtp_port=587
     kellelt="milamilana2007@gmail.com"
-    parool=input("Rakendus parool") #""avhy fgnt ndaw ldwl"
+    parool=input("Rakendus parool: ") #""avhy fgnt ndaw ldwl"
     context=ssl.crate_default_context()
     msg=EmailMessage
-    msg.set_content(kiri,subtype="html")
     msg['Subject']="Test"
     msg['From']=kellelt
     msg['To']=kellele
-    with open("Pineapple.webp","rb") as f:
-        pilt=f.read()
-    msg.add_attachment(pilt,maintype="image",subtype="webp",filename="Pineapple.webp")
+    msg.set_content("Tere, see on test e-kiri")
     try:
         server=smtplib.SMTP(smtp_server, smtp_port)
         server.starttls(context=context)
