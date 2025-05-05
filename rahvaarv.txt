@@ -1,0 +1,6 @@
+Tallinn 452412
+Tartu 102521
+Narva 53840
+Pärnu 49120
+Viljandi 17123
+Rakvere 15890

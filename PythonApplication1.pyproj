@@ -24,8 +24,10 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="8_2_maed.py" />
     <Compile Include="funktsioonid.py" />
     <Compile Include="Fun_module.py" />
+    <Compile Include="liblikas.py" />
     <Compile Include="Lihtsad_programmid.py" />
     <Compile Include="main1.py" />
     <Compile Include="teema7_failid.py" />
@@ -41,6 +43,7 @@
     <Compile Include="Kordused.py" />
     <Compile Include="PythonApplication1.py" />
     <Compile Include="teema6.dict.py" />
+    <Compile Include="teema_8.py" />
     <Compile Include="Tingimuslik_operaator_IF.py" />
     <Compile Include="Tund1.py" />
     <Compile Include="töötajad7.py" />
@@ -52,7 +55,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="kontaktid.txt" />
+    <Content Include="maed.txt" />
     <Content Include="Pineapple.webp" />
+    <Content Include="rahvaarv.txt" />
     <Content Include="sõnastik.txt" />
     <Content Include="TextFile1.txt" />
   </ItemGroup>
