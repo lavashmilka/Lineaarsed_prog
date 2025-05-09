@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>5e132cae-3674-4823-8454-2a0cf07fb0da</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>8_2_maed.py</StartupFile>
+    <StartupFile>main1.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -26,6 +26,7 @@
   <ItemGroup>
     <Compile Include="8_2_maed.py" />
     <Compile Include="funktsioonid.py" />
+    <Compile Include="funk_kontaktid.py" />
     <Compile Include="Fun_module.py" />
     <Compile Include="liblikas.py" />
     <Compile Include="Lihtsad_programmid.py" />
@@ -56,8 +57,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ananas.png" />
+    <Content Include="iphone.png" />
     <Content Include="kontaktid.txt" />
     <Content Include="maed.txt" />
+    <Content Include="phone.ico" />
     <Content Include="Pineapple.webp" />
     <Content Include="rahvaarv.txt" />
     <Content Include="sõnastik.txt" />

@@ -27,8 +27,8 @@ def lisa_kontakt(kontaktid):
 def kuva_kontaktid(kontaktid):
     """Показывает все данные в телефонной книге
     """
-    for k in kontaktid:
-            print(k)
+    for m in kontaktid:
+            print(m)
 
 def otsi_kontakt(kontaktid):
     """Ищет данные в телефонной книге
