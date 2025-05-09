@@ -5,7 +5,7 @@ def kontaktid_failist(fail:str):
     kontaktid=[]
     with open(fail,'r',encoding="utf-8-sig") as f:
         for rida in f:
-            nimi,email,telefon=rida.strip().split("/")
+            nimi,email,telefon=rida.strip().split(",")
             kontaktid.append({'nimi':nimi,'email':email,'telefon':telefon})
     return kontaktid
 
@@ -63,13 +63,13 @@ def paranda_kontakt(kontaktid):
 def sorteeri_kontakt(kontaktid):
     """Сортировка контактов по имени, телефону или email
     """
-    by = input("Sorteeri mille järgi (nimi, telefon, email): ").strip().lower()
-    if by not in ["nimi", "telefon", "email"]:
+    s = input("Sorteeri mille järgi (nimi, telefon, email): ").strip().lower()
+    if s not in ["nimi", "telefon", "email"]:
         print("Vale valik.")
         return
     ajutine = []
     for kontakt in kontaktid:
-        ajutine.append([kontakt[by].lower(), kontakt])
+        ajutine.append([kontakt[s].lower(), kontakt])
     ajutine.sort()
     for i in range(len(kontaktid)):
         kontaktid[i] = ajutine[i][1]
