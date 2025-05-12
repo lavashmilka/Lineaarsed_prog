@@ -28,6 +28,7 @@
     <Compile Include="funktsioonid.py" />
     <Compile Include="funk_kontaktid.py" />
     <Compile Include="Fun_module.py" />
+    <Compile Include="kontaktid_fun2.py" />
     <Compile Include="liblikas.py" />
     <Compile Include="Lihtsad_programmid.py" />
     <Compile Include="main1.py" />
@@ -58,6 +59,7 @@
   <ItemGroup>
     <Content Include="ananas.png" />
     <Content Include="iphone.png" />
+    <Content Include="kontaktid.json" />
     <Content Include="kontaktid.txt" />
     <Content Include="maed.txt" />
     <Content Include="phone.ico" />
