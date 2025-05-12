@@ -38,7 +38,7 @@ def paranda_kontakt(kontaktid, vana_nimi, uus_nimi, uus_telefon, uus_email):
     return False
 
 
-def sorteeri_kontaktid(kontaktid, vaike):
+def sorteeri_kontakt(kontaktid, vaike):
     return sorted(kontaktid, key=lambda x: x[vaike].lower())
 
 
