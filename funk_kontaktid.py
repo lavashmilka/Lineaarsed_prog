@@ -2,6 +2,8 @@ import json
 import os
 import smtplib,ssl
 from email.message import EmailMessage
+import random
+
 
 faili_nimi="kontaktid.json"
 
@@ -40,4 +42,34 @@ def muuda_kontakt(kontaktid, vana_nimi, uus_nimi, uus_telefon, uus_email):
 
 def sorteeri_kontaktid(kontaktid, vaike):
     return sorted(kontaktid, key=lambda x: x[vaike].lower())
+
+
+def sorteeri_reverse(kontaktid,vaike):
+    return sorted(kontaktid, key=lambda x: x[vaike], reverse=True)
+
+def otsi_kontakt_numbri(kontaktid , telefon):
+    return [k for k in kontaktid if telefon.lower() in k["telefon"].lower()]
+
+def vali_juhuslik_kontakt(kontaktid):
+    if kontaktid:
+        return random.choice(kontaktid)
+    else:
+        return None
+
+
+def genereeri_kontakti_hüüdnimi(nimi):
+    nimed=["Pdiddy", "Eminem", "Beyonce", "Ariana Grande", "Zendpappy"]
+    nalja=["White party","Hat", "Hehehehehe"]
+    hüüdnimi=f"{random.choice(nimi)} {random.choice(nalja)}"
+    return hüüdnimi
+
+
+def kontakti_paevasoovitus(kontaktid):
+    if not kontaktid:
+        return "Kontaktide nimekiri on tühi"
+    kontakt=random.choice(kontaktid)
+    return f"Täname soovitus: Võta ühendust\n {kontakt['nimi']} | {kontakt['telefon']} | {kontakt['email']}"
+
+
+
 
