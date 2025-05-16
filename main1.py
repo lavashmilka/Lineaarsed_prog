@@ -32,12 +32,12 @@ from kontaktid_fun2 import *
 fail="kontaktid.txt"
 kontaktid = loe_failist()
 
-def kuva_kontaktid():
+def kuva_kontaktid_m():
     tekstikast.delete("1.0", "end")
     for kontakt in kontaktid:
         tekstikast.insert("end", f"{kontakt['nimi']}| {kontakt['telefon']} | {kontakt['email']}\n")
 
-def lisa_kontakt_gui():
+def lisa_kontakt_m():
     nimi = nimi_entry.get()
     telefon = telefon_entry.get()
     email = email_entry.get()
@@ -48,70 +48,72 @@ def lisa_kontakt_gui():
         nimi_entry.delete(0,'end')
         telefon_entry.delete(0,'end')
         email_entry.delete(0,'end')
-        kuva_kontaktid()
+        kuva_kontaktid_m()
     else:
-        messagebox.showwarning("Tühjad väljad","Täida kõik väljad")
+        messagebox.showwarning("Täida kõik väljad")
 
-# def otsi_kontakt_gui():
-#     nimi = nimi_entry.get()
-#     tulemused=otsi_kontakt(kontaktid, nimi)
-#     if tulemused:
-#         kontakt=tulemused[0]
-#         otsingu_viide.set(kontakt["nimi"])
-#         nimi_entry.delete(0,'end')
-#         nimi_entry.insert(0, kontakt["nimi"])
-#         telefon_entry.delete(0,'end')
-#         telefon_entry.insert(0, kontakt["telefon"])
-#         email_entry.delete(0,'end')
-#         email_entry.insert(0, kontakt["email"])
-#         tekstikast.delete("1.0",'end')
-#         tekstikast.insert("end", f"Leitud: {kontakt['nimi']} | {kontakt['telefon']} | {kontakt['email']}\n")
-#     else:
-#         messagebox.showwarning("Ei leitud", "Kontakt puudub.")
+def otsi_kontakt_m():
+    nimi = nimi_entry.get()
+    tulemused=otsi_kontakt(kontaktid, nimi)
+    if tulemused:
+        kontakt=tulemused[0]
+        otsingu_viide.set(kontakt["nimi"])
+        nimi_entry.delete(0,'end')
+        nimi_entry.insert(0, kontakt["nimi"])
+        telefon_entry.delete(0,'end')
+        telefon_entry.insert(0, kontakt["telefon"])
+        email_entry.delete(0,'end')
+        email_entry.insert(0, kontakt["email"])
+        tekstikast.delete("1.0",'end')
+        tekstikast.insert("end", f"Leitud: {kontakt['nimi']} | {kontakt['telefon']} | {kontakt['email']}\n")
+    else:
+        messagebox.showwarning("Ei leitud", "Kontakt puudub.")
 
-# def kustuta_kontakt_gui():
-#     nimi = nimi_entry.get()
-#     if kustuta_kontakt(kontaktid, nimi):
-#         salvesta_kontaktid(kontaktid)
-#         messagebox.showinfo("Kustutatud", f"'{nimi}' kustutati.")
-#         kuva_kontaktid()
-#     else:
-#         messagebox.showwarning("Ei leitud", "Kontakt puudub.")
+def kustuta_kontakt_m():
+    nimi = nimi_entry.get()
+    if kustuta_kontakt(kontaktid, nimi):
+        salvesta_kontaktid(kontaktid)
+        messagebox.showinfo("Kustutatud", f"'{nimi}' kustutati.")
+        kuva_kontaktid_m()
+    else:
+        messagebox.showwarning("Ei leitud", "Kontakt puudub.")
 
-# def sorteeri_gui():
-#     kontaktid_sorted=sorteeri_kontaktid(kontaktid, "nimi")
-#     tekstikast.delete("1.0","end")
-#     for kontakt in kontaktid_sorted:
-#         tekstikast.insert("end", f"{kontakt['nimi']}| {kontakt['telefon']} | {kontakt['email']}\n")
+def sorteeri_kontakt_m():
+    kontaktid_sorted=sorteeri_kontakt(kontaktid, "nimi")
+    tekstikast.delete("1.0","end")
+    for kontakt in kontaktid_sorted:
+        tekstikast.insert("end", f"{kontakt['nimi']}| {kontakt['telefon']} | {kontakt['email']}\n")
 
 
-# def muuda_kontakt_gui():
-#     vana_nimi = otsingu_viide.get()
-#     uus_nimi = nimi_entry.get()
-#     uus_telefon = telefon_entry.get()
-#     uus_email = email_entry.get()
-#     if vana_nimi and uus_email and uus_telefon and uus_email:
-#         õnnestus=muuda_kontakt(kontaktid, vana_nimi, uus_nimi, uus_telefon, uus_email)
-#         if õnnestus:
-#             salvesta_kontaktid(kontaktid)
-#             messagebox.showinfo("Muudetud", f"'{vana_nimi}' andmed on muudetud.")
-#             kuva_kontaktid()
-#         else:
-#             messagebox.showwarning("Tõrge", "Kontakti ei leitud muudatuseks.")
-#     else:
-#        messagebox.showwarning("Puuduvad andmed", "Palun täida kõik väljad.")
+def muuda_kontakt_m():
+    vana_nimi = otsingu_viide.get()
+    uus_nimi = nimi_entry.get()
+    uus_telefon = telefon_entry.get()
+    uus_email = email_entry.get()
+    if vana_nimi and uus_email and uus_telefon and uus_email:
+        õnnestus=muuda_kontakt_m(kontaktid, vana_nimi, uus_nimi, uus_telefon, uus_email)
+        if õnnestus:
+            salvesta_kontaktid(kontaktid)
+            messagebox.showinfo("Muudetud", f"'{vana_nimi}' andmed on muudetud.")
+            kuva_kontaktid_m()
+        else:
+            messagebox.showwarning("Kontakti ei leitud muudatuseks.")
+    else:
+       messagebox.showwarning("Puuduvad andmed")
 
 
 
 
 aken=Tk() 
 aken.title("Kontaktid")
+otsingu_viide=tk.StringVar() #IntVar() #Muudame StringVar-iks, et saaksime salvestada algse nime
+otsingu_viide.set("")
 tk.Label(aken,text="Nimi",bg="lightgreen", font=("Calibri",12, "bold italic underline")).pack()
 nimi_entry=tk.Entry(aken)
 nimi_entry.pack()
 
 nuppude_rida=tk.Frame(aken)
-nuppude_rida.pack()
+nuppude_rida.pack(pady=5)
 
 
 tk.Label(aken,text="Telefon",bg="lightgreen", font=("Calibri",12, "bold italic underline")).pack()
@@ -121,17 +123,17 @@ telefon_entry.pack(pady=5)
 
 tk.Label(aken,text="Email",bg="lightgreen",font=("Calibri",12, "bold italic underline") ).pack()
 email_entry=tk.Entry(aken)
-email_entry.pack()
+email_entry.pack(pady=5)
 
 nuppude_rida=tk.Frame(aken)
 nuppude_rida.pack(pady=5)
 
-tk.Button(nuppude_rida,text="Lisa kontakt", command=lisa_kontakt,font=("Calibri",12, "bold italic"),bg="lightgreen",fg="black").pack(side="left")
-tk.Button(nuppude_rida,text="Kuva kontaktid", command=kuva_kontaktid,font=("Calibri",12, "bold italic"),bg="lightgreen",fg="black").pack(side="left")
-tk.Button(nuppude_rida,text="Otsi kontakt", command=otsi_kontakt,font=("Calibri",12, "bold italic"),bg="lightgreen",fg="black").pack(side="left")
-tk.Button(nuppude_rida,text="Kustuta kontakt", command=kustuta_kontakt,font=("Calibri",12, "bold italic"),bg="lightgreen",fg="black").pack(side="left")
-tk.Button(nuppude_rida,text="Paranda kontakt", command=paranda_kontakt,font=("Calibri",12, "bold italic"),bg="lightgreen",fg="black").pack(side="left")
-tk.Button(nuppude_rida,text="Sorteeri kontaktid", command=sorteeri_kontakt,font=("Calibri",12, "bold italic"),bg="lightgreen",fg="black").pack(side="left")
+tk.Button(nuppude_rida,text="Lisa kontakt", command=lisa_kontakt_m,font=("Calibri",12, "bold italic"),bg="lightgreen",fg="black").pack(side="left")
+tk.Button(nuppude_rida,text="Kuva kontaktid", command=kuva_kontaktid_m,font=("Calibri",12, "bold italic"),bg="lightgreen",fg="black").pack(side="left")
+tk.Button(nuppude_rida,text="Otsi kontakt", command=otsi_kontakt_m,font=("Calibri",12, "bold italic"),bg="lightgreen",fg="black").pack(side="left")
+tk.Button(nuppude_rida,text="Kustuta kontakt", command=kustuta_kontakt_m,font=("Calibri",12, "bold italic"),bg="lightgreen",fg="black").pack(side="left")
+tk.Button(nuppude_rida,text="Paranda kontakt", command=muuda_kontakt_m,font=("Calibri",12, "bold italic"),bg="lightgreen",fg="black").pack(side="left")
+tk.Button(nuppude_rida,text="Sorteeri kontaktid", command= sorteeri_kontakt_m,font=("Calibri",12, "bold italic"),bg="lightgreen",fg="black").pack(side="left")
 tk.Button(nuppude_rida,text="Välju", command=salvesta_kontaktid,font=("Calibri",12, "bold italic"),bg="lightgreen",fg="black").pack(side="left")
 
 aken.configure(bg="pink")

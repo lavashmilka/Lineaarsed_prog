@@ -1,4 +1,4 @@
-[
+﻿[
     {
         "nimi": "milana",
         "telefon": "5587948",
@@ -9,5 +9,9 @@
         "telefon": "56910646",
         "email": "kristiinak@gmail.com"
     },
+    {
+        "nimi": "slay",
+        "telefon": "2342342",
+        "email": "slay@gmail.com"
     }
 ]
