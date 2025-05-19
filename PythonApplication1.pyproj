@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>5e132cae-3674-4823-8454-2a0cf07fb0da</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>teema_9_ul3.py</StartupFile>
+    <StartupFile>teema_9_ulesanne.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -48,8 +48,8 @@
     <Compile Include="teema8%28tkinter%29.py" />
     <Compile Include="teema_8.py" />
     <Compile Include="teema_9.py" />
-    <Compile Include="teema_9_teineul.py" />
     <Compile Include="teema_9_ul3.py" />
+    <Compile Include="teema_9_ul2.py" />
     <Compile Include="teema_9_ulesanne.py" />
     <Compile Include="Tingimuslik_operaator_IF.py" />
     <Compile Include="Tund1.py" />
@@ -72,6 +72,8 @@
     <Content Include="Pineapple.webp" />
     <Content Include="pink.png" />
     <Content Include="pers.jpg" />
+    <Content Include="mario.png" />
+    <Content Include="bird.png" />
     <Content Include="rahvaarv.txt" />
     <Content Include="sõnastik.txt" />
     <Content Include="TextFile1.txt" />

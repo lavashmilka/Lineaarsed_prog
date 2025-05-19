@@ -9,13 +9,13 @@ sonad = [
 ]
 
 
-# def loe_failist(fsonad):
-#     f=open("TextFile.txt",'w', encoding="utf-8-sig")
-#     for s in sonad:
-#         rida=f"{s['est']}-{s['rus']}-{s['eng']}]"
-#     f.write(rida)
-#     f.close()
-#     print("Sõnad on salvestatud faili 'sona")
+def loe_failist(fsonad):
+    f=open("TextFile.txt",'w', encoding="utf-8-sig")
+    for s in sonad:
+        rida=f"{s['est']}-{s['rus']}-{s['eng']}]"
+    f.write(rida)
+    f.close()
+    print("Sõnad on salvestatud faili 'sona")
 
 def valjasta_tervitus():  
     print("Tere tulemast keelesõnastikku!")
@@ -129,6 +129,10 @@ def kuva_sonad(sonad):
 #     sona = input("Sisesta sõna: ").lower() #Запрашиваем слово
 #     mootor.say(sona) #Озвучиваем его
 #     mootor.runAndWait() #Запускаем произношение
+
+
+
+
 
 
 
