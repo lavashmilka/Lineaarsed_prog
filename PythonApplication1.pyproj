@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>5e132cae-3674-4823-8454-2a0cf07fb0da</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>teema_9_3osa.py</StartupFile>
+    <StartupFile>teema_9_osa3_ul2.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -33,6 +33,8 @@
     <Compile Include="Lihtsad_programmid.py" />
     <Compile Include="main1.py" />
     <Compile Include="teema_9_3osa.py" />
+    <Compile Include="teema_9_osa3_ul2.py" />
+    <Compile Include="teema_9_osa5.py" />
     <Compile Include="ul1_teema9.py" />
     <Compile Include="teema7_failid.py" />
     <Compile Include="modulepalgad.py" />
@@ -66,9 +68,14 @@
     <InterpreterReference Include="Global|PythonCore|3.9" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="a.png" />
+    <Content Include="bas.png" />
     <Content Include="doog.png" />
     <Content Include="dog.jpg" />
-    <Content Include="pall.png" />
+    <Content Include="lol.png" />
+    <Content Include="g.png" />
+    <Content Include="pauk.png" />
+    <Content Include="pauk1.png" />
     <Content Include="win.jpg" />
     <Content Include="nas.jpg" />
     <Content Include="ananas.png" />
@@ -87,6 +94,8 @@
     <Content Include="sõnastik.txt" />
     <Content Include="TextFile1.txt" />
     <Content Include="token_crypto.ico" />
+    <Content Include="dorogaimpo.png" />
+    <Content Include="z.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
