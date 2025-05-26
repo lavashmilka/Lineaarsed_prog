@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>5e132cae-3674-4823-8454-2a0cf07fb0da</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>ul1_teema9.py</StartupFile>
+    <StartupFile>teema_9_3osa.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -32,6 +32,7 @@
     <Compile Include="liblikas.py" />
     <Compile Include="Lihtsad_programmid.py" />
     <Compile Include="main1.py" />
+    <Compile Include="teema_9_3osa.py" />
     <Compile Include="ul1_teema9.py" />
     <Compile Include="teema7_failid.py" />
     <Compile Include="modulepalgad.py" />
@@ -67,6 +68,7 @@
   <ItemGroup>
     <Content Include="doog.png" />
     <Content Include="dog.jpg" />
+    <Content Include="pall.png" />
     <Content Include="win.jpg" />
     <Content Include="nas.jpg" />
     <Content Include="ananas.png" />
