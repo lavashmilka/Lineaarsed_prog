@@ -2,21 +2,21 @@ import pygame,sys,random
 pygame.init()
 pink = [255, 153, 255]
 red = [255, 0, 0]
-# Размер окна
+# Ekraani suurus
 screen_width = 640
 screen_height = 480
 screen = pygame.display.set_mode((screen_width, screen_height))
 pygame.display.set_caption("Rallimäng")
 
-# Часы и шрифт
+# Kell ja font
 clock = pygame.time.Clock()
 font = pygame.font.SysFont(None, 36)
 
-# Фон
+# Taust
 background = pygame.image.load("dorogaimpo.png")
 background = pygame.transform.scale(background, (640, 480))
 
-# Красная машина игрока
+# Peamine auto
 player_img = pygame.image.load("g.png")
 player_img = pygame.transform.scale(player_img, (70, 80))
 
@@ -32,7 +32,7 @@ pauk_pos=None
 # Координаты полос (X)
 lanes = [150, 270, 390]
 
-# Три машины
+# Kolm autot
 cars_img = [
 pygame.transform.scale(pygame.image.load("z.png"), (50, 80)),
 pygame.transform.scale(pygame.image.load("a.png"), (50, 80)),
@@ -75,7 +75,7 @@ while True:
 		
 		player_rect = pygame.Rect(player_x, player_y, 50, 80)
 		screen.blit(player_img, (player_x, player_y))
-		# Двигаем и отображаем каждую синюю машину
+		# Двигаем и отображаем каждую машину
 		for enemy in enemies:
 			enemy["rect"].y += 5
 			screen.blit(enemy["img"], enemy["rect"].topleft)

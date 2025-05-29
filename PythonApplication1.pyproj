@@ -76,6 +76,7 @@
     <Content Include="g.png" />
     <Content Include="pauk.png" />
     <Content Include="pauk1.png" />
+    <Content Include="BAM.png" />
     <Content Include="win.jpg" />
     <Content Include="nas.jpg" />
     <Content Include="ananas.png" />
