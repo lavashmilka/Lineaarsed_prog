@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>5e132cae-3674-4823-8454-2a0cf07fb0da</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>teema_9_osa3_ul2.py</StartupFile>
+    <StartupFile>MAAANG.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -31,7 +31,10 @@
     <Compile Include="kontaktid_fun2.py" />
     <Compile Include="liblikas.py" />
     <Compile Include="Lihtsad_programmid.py" />
+    <Compile Include="MAAANG.py" />
     <Compile Include="main1.py" />
+    <Compile Include="MANG.py" />
+    <Compile Include="mangg.py" />
     <Compile Include="teema_9_3osa.py" />
     <Compile Include="teema_9_osa3_ul2.py" />
     <Compile Include="teema_9_osa5.py" />
@@ -72,11 +75,23 @@
     <Content Include="bas.png" />
     <Content Include="doog.png" />
     <Content Include="dog.jpg" />
+    <Content Include="ferma2.png" />
+    <Content Include="ferma.png" />
+    <Content Include="kor.png" />
     <Content Include="lol.png" />
     <Content Include="g.png" />
+    <Content Include="moneta.png" />
+    <Content Include="muna.png" />
+    <Content Include="muna1.png" />
+    <Content Include="muna2.png" />
+    <Content Include="muna3.png" />
     <Content Include="pauk.png" />
     <Content Include="pauk1.png" />
     <Content Include="BAM.png" />
+    <Content Include="broke.png" />
+    <Content Include="broke1.png" />
+    <Content Include="kor2.png" />
+    <Content Include="fon.png" />
     <Content Include="win.jpg" />
     <Content Include="nas.jpg" />
     <Content Include="ananas.png" />
